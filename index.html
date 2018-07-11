@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 
 <p style="padding-left: 30px;">Welcome!!!&nbsp;</p>
-<p style="padding-left: 30px;">THE ink for that page <a href="http://34.241.105.153/">тут</a></p>
+<p style="padding-left: 30px;">THE ink for that page <a href="http://34.241.105.153/">CLICK</a></p>
 <p style="padding-left: 30px;">REPO GITHAB &nbsp;<a href="https://github.com/poloz2005/jjenkins">GIT</a></p>
 <p style="padding-left: 30px;">My Pipeline</p>
 <p style="padding-left: 30px;">node {<br />def main<br />git url: 'https://github.com/poloz2005/jjenkins.git'<br />stage("build")<br />myimage = docker.build("poloz942/web")<br />stage('Push image')<br />docker.withRegistry('https://registry.hub.docker.com', 'dockerhub'){<br />myimage.push("${env.BUILD_ID}")<br />myimage.push("latest")<br />}<br />stage("clean")<br />sh "docker image prune -af"<br />stage("Deploy_on_emote_machine")<br />sh "sudo docker-machine ssh nginx-prod sudo docker pull poloz942/web"<br />sh "sudo docker-machine ssh nginx-prod sudo docker stop myimage"<br />sh "sudo docker-machine ssh nginx-prod sudo docker run -d --rm -p 80:80 --name myimage poloz942/web"<br />}</p>
