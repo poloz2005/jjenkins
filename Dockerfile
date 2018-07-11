@@ -30,5 +30,7 @@ RUN make install
 RUN rm -rf /var/lib/apt/lists/*
 RUN rm -Rf nginx-1.15.1 master
 
+COPY nginx.conf /etc/nginx/
+
 EXPOSE 80
 CMD ["/usr/local/sbin/nginx", "-g", "daemon off;"]
