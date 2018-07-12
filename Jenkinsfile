@@ -1,5 +1,5 @@
 node { 
-        git url: 'https://github.com/jfrogdev/project-examples.git'
+        git url: 'https://github.com/poloz2005/jjenkins.git'
         def main 
                 stage("build")
                         myimage = docker.build("poloz942/web")
