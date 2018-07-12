@@ -8,7 +8,7 @@ node {
                         myimage.push("${env.BUILD_ID}")
                         myimage.push("latest")
                        }
-        
+      
                 stage("clean")
                         sh "docker image prune -af"
         
