@@ -11,7 +11,7 @@ node {
     
                 stage("clean")
                         sh "docker image prune -af"
-        
+       1 
                 stage("Deploy_on_emote_machine")
                         sh "sudo docker-machine ssh nginx-prod sudo docker pull poloz942/web"
                         sh "sudo docker-machine ssh nginx-prod sudo docker stop myimage"
