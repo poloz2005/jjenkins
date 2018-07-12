@@ -1,5 +1,6 @@
 node { 
         git url: 'https://github.com/poloz2005/jjenkins.git'
+        
         dev main
                 stage("build")
                         myimage = docker.build("poloz942/web")
