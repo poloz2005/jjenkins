@@ -1,6 +1,6 @@
 node { 
         git url: 'https://github.com/poloz2005/jjenkins.git'
-        def main 
+        try main 
                 stage("build")
                         myimage = docker.build("poloz942/web")
                 
