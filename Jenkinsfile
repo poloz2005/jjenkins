@@ -15,7 +15,7 @@ node {
         
                 stage("Deploy_on_emote_machine")
                         sh "sudo docker-machine ssh nginx-prod sudo docker pull poloz942/web"
-                        sh "sudo docker-machine ssh nginx-prod sudo docker stop myimage"
+                        sh "sudo docker-machine ssh nginx-prod sudo docker stop myimage >> /dev/null"
                         sh "sudo docker-machine ssh nginx-prod sudo docker run -d --rm  -p 80:80 --name myimage  poloz942/web"
                    
 }
